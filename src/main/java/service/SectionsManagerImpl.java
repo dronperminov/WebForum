@@ -12,21 +12,27 @@ public class SectionsManagerImpl implements SectionsManager {
     @Autowired
     private SectionsDAO sectionDAO;
 
+    //@Override
+    @Transactional
+    public void insertSections(SectionsEntity section) {
+        sectionDAO.insertSection(section);
+    }
+
     @Transactional
     public void updateSections(SectionsEntity section) {
-        sectionDAO.updateSections(section);
+        sectionDAO.updateSection(section);
     }
 
     //@Override
     @Transactional
-    public void insertSections(SectionsEntity section) {
-        sectionDAO.insertSections(section);
+    public void deleteSections(SectionsEntity section) {
+        sectionDAO.deleteSection(section);
     }
 
     //@Override
     @Transactional
     public SectionsEntity getSectionsById(int sectionId) {
-        return sectionDAO.getSectionsById(sectionId);
+        return sectionDAO.getSectionById(sectionId);
     }
 
     //@Override

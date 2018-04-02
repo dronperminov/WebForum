@@ -22,13 +22,17 @@ public class UserDAOImpl extends HibernateDaoSupport implements UserDAO {
         this.setSessionFactory(sessionFactory);
     }
 
+    //@Override
+    public void insertUser(UserEntity user) {
+        sessionFactory.getCurrentSession().save(user);
+    }
+
     public void updateUser(UserEntity user) {
         sessionFactory.getCurrentSession().update(user);
     }
 
-    //@Override
-    public void insertUser(UserEntity user) {
-        sessionFactory.getCurrentSession().save(user);
+    public void deleteUser(UserEntity user) {
+        sessionFactory.getCurrentSession().delete(user);
     }
 
     //@Override

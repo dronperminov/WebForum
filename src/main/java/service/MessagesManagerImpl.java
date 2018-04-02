@@ -12,15 +12,20 @@ public class MessagesManagerImpl implements MessagesManager {
     @Autowired
     private MessagesDAO messageDAO;
 
+    //@Override
+    @Transactional
+    public void insertMessage(MessagesEntity message) {
+        messageDAO.insertMessage(message);
+    }
+
     @Transactional
     public void updateMessage(MessagesEntity message) {
         messageDAO.updateMessage(message);
     }
 
-    //@Override
     @Transactional
-    public void insertMessage(MessagesEntity message) {
-        messageDAO.insertMessage(message);
+    public void deleteMessage(MessagesEntity message) {
+        messageDAO.deleteMessage(message);
     }
 
     //@Override

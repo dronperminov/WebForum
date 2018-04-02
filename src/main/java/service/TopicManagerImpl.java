@@ -12,6 +12,12 @@ public class TopicManagerImpl implements TopicManager {
     @Autowired
     private TopicDAO topicDAO;
 
+    //@Override
+    @Transactional
+    public void insertTopic(TopicEntity topic) {
+        topicDAO.insertTopic(topic);
+    }
+
     @Transactional
     public void updateTopic(TopicEntity topic) {
         topicDAO.updateTopic(topic);
@@ -19,8 +25,8 @@ public class TopicManagerImpl implements TopicManager {
 
     //@Override
     @Transactional
-    public void insertTopic(TopicEntity topic) {
-        topicDAO.insertTopic(topic);
+    public void deleteTopic(TopicEntity topic) {
+        topicDAO.deleteTopic(topic);
     }
 
     //@Override

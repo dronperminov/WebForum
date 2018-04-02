@@ -19,18 +19,22 @@ public class TopicDAOImpl extends HibernateDaoSupport implements TopicDAO {
         this.setSessionFactory(sessionFactory);
     }
 
-    public void updateTopic(TopicEntity Topic) {
-        sessionFactory.getCurrentSession().update(Topic);
+    //@Override
+    public void insertTopic(TopicEntity topic) {
+        sessionFactory.getCurrentSession().save(topic);
+    }
+
+    public void updateTopic(TopicEntity topic) {
+        sessionFactory.getCurrentSession().update(topic);
+    }
+
+    public void deleteTopic(TopicEntity topic) {
+        sessionFactory.getCurrentSession().delete(topic);
     }
 
     //@Override
-    public void insertTopic(TopicEntity Topic) {
-        sessionFactory.getCurrentSession().save(Topic);
-    }
-
-    //@Override
-    public TopicEntity getTopicById(int TopicId) {
-        return (TopicEntity) sessionFactory.getCurrentSession().get(TopicEntity.class, TopicId);
+    public TopicEntity getTopicById(int topicId) {
+        return (TopicEntity) sessionFactory.getCurrentSession().get(TopicEntity.class, topicId);
     }
 
     //@Override

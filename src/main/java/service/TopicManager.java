@@ -6,6 +6,7 @@ import model.TopicEntity;
 public interface TopicManager {
     void insertTopic(TopicEntity topic);
     void updateTopic(TopicEntity topic);
+    void deleteTopic(TopicEntity topic);
 
     TopicEntity getTopicById(int topicId);
 

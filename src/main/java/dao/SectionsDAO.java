@@ -4,10 +4,11 @@ import java.util.List;
 import model.SectionsEntity;
 
 public interface SectionsDAO {
-    void insertSections(SectionsEntity section);
-    void updateSections(SectionsEntity section);
+    void insertSection(SectionsEntity section);
+    void updateSection(SectionsEntity section);
+    void deleteSection(SectionsEntity section);
 
-    SectionsEntity getSectionsById(int sectionId);
+    SectionsEntity getSectionById(int sectionId);
 
     List<SectionsEntity> getSections();
 }

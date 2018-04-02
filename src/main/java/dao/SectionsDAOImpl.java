@@ -19,17 +19,22 @@ public class SectionsDAOImpl extends HibernateDaoSupport implements SectionsDAO 
         this.setSessionFactory(sessionFactory);
     }
 
-    public void updateSections(SectionsEntity section) {
+    //@Override
+    public void insertSection(SectionsEntity section) {
+        sessionFactory.getCurrentSession().save(section);
+    }
+
+    public void updateSection(SectionsEntity section) {
         sessionFactory.getCurrentSession().update(section);
     }
 
     //@Override
-    public void insertSections(SectionsEntity section) {
-        sessionFactory.getCurrentSession().save(section);
+    public void deleteSection(SectionsEntity section) {
+        sessionFactory.getCurrentSession().delete(section);
     }
 
     //@Override
-    public SectionsEntity getSectionsById(int sectionId) {
+    public SectionsEntity getSectionById(int sectionId) {
         return (SectionsEntity) sessionFactory.getCurrentSession().get(SectionsEntity.class, sectionId);
     }
 

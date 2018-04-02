@@ -6,6 +6,7 @@ import model.TopicEntity;
 public interface TopicDAO {
     void insertTopic(TopicEntity topic);
     void updateTopic(TopicEntity topic);
+    void deleteTopic(TopicEntity topic);
 
     TopicEntity getTopicById(int topicId);
 

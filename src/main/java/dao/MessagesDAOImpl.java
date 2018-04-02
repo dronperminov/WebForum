@@ -19,13 +19,17 @@ public class MessagesDAOImpl extends HibernateDaoSupport implements MessagesDAO 
         this.setSessionFactory(sessionFactory);
     }
 
+    //@Override
+    public void insertMessage(MessagesEntity message) {
+        sessionFactory.getCurrentSession().save(message);
+    }
+
     public void updateMessage(MessagesEntity message) {
         sessionFactory.getCurrentSession().update(message);
     }
 
-    //@Override
-    public void insertMessage(MessagesEntity message) {
-        sessionFactory.getCurrentSession().save(message);
+    public void deleteMessage(MessagesEntity message) {
+        sessionFactory.getCurrentSession().delete(message);
     }
 
     //@Override

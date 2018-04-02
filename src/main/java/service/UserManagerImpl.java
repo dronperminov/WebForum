@@ -12,6 +12,12 @@ public class UserManagerImpl implements UserManager {
     @Autowired
     private UserDAO userDAO;
 
+    //@Override
+    @Transactional
+    public void insertUser(UserEntity user) {
+        userDAO.insertUser(user);
+    }
+
     @Transactional
     public void updateUser(UserEntity User) {
         userDAO.updateUser(User);
@@ -19,8 +25,8 @@ public class UserManagerImpl implements UserManager {
 
     //@Override
     @Transactional
-    public void insertUser(UserEntity user) {
-        userDAO.insertUser(user);
+    public void deleteUser(UserEntity user) {
+        userDAO.deleteUser(user);
     }
 
     //@Override
