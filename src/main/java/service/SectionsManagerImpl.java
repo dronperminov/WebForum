@@ -14,24 +14,24 @@ public class SectionsManagerImpl implements SectionsManager {
 
     //@Override
     @Transactional
-    public void insertSections(SectionsEntity section) {
+    public void insertSection(SectionsEntity section) {
         sectionDAO.insertSection(section);
     }
 
     @Transactional
-    public void updateSections(SectionsEntity section) {
+    public void updateSection(SectionsEntity section) {
         sectionDAO.updateSection(section);
     }
 
     //@Override
     @Transactional
-    public void deleteSections(SectionsEntity section) {
+    public void deleteSection(SectionsEntity section) {
         sectionDAO.deleteSection(section);
     }
 
     //@Override
     @Transactional
-    public SectionsEntity getSectionsById(int sectionId) {
+    public SectionsEntity getSectionById(int sectionId) {
         return sectionDAO.getSectionById(sectionId);
     }
 
