@@ -1,7 +1,8 @@
 package service;
 
-import java.util.List;
 import model.SectionsEntity;
+
+import java.util.List;
 
 public interface SectionsManager {
     void insertSection(SectionsEntity section);

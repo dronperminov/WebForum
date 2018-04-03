@@ -1,7 +1,8 @@
 package dao;
 
-import java.util.List;
 import model.TopicEntity;
+
+import java.util.List;
 
 public interface TopicDAO {
     void insertTopic(TopicEntity topic);

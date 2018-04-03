@@ -8,6 +8,7 @@ public class TopicEntity {
     private int topicId;
     private String name;
     private String description;
+    private SectionsEntity sectionsBySectionId;
 
     @Id
     @Column(name = "topicId", nullable = false)
@@ -59,5 +60,15 @@ public class TopicEntity {
         result = 31 * result + (name != null ? name.hashCode() : 0);
         result = 31 * result + (description != null ? description.hashCode() : 0);
         return result;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "sectionId", referencedColumnName = "sectionId")
+    public SectionsEntity getSectionsBySectionId() {
+        return sectionsBySectionId;
+    }
+
+    public void setSectionsBySectionId(SectionsEntity sectionsBySectionId) {
+        this.sectionsBySectionId = sectionsBySectionId;
     }
 }

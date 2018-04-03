@@ -1,7 +1,8 @@
 package dao;
 
-import java.util.List;
 import model.SectionsEntity;
+
+import java.util.List;
 
 public interface SectionsDAO {
     void insertSection(SectionsEntity section);

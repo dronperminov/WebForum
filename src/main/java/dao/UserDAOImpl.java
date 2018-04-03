@@ -1,17 +1,15 @@
 package dao;
 
-import java.util.List;
-
+import model.UserEntity;
 import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.orm.hibernate4.LocalSessionFactoryBean;
 import org.springframework.orm.hibernate4.support.HibernateDaoSupport;
 import org.springframework.stereotype.Repository;
 
-import model.UserEntity;
+import java.util.List;
 
 @Repository
 public class UserDAOImpl extends HibernateDaoSupport implements UserDAO {

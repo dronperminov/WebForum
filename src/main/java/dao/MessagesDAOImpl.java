@@ -1,14 +1,13 @@
 package dao;
 
-import java.util.List;
-
+import model.MessagesEntity;
 import org.hibernate.Criteria;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate4.support.HibernateDaoSupport;
 import org.springframework.stereotype.Repository;
 
-import model.MessagesEntity;
+import java.util.List;
 
 @Repository
 public class MessagesDAOImpl extends HibernateDaoSupport implements MessagesDAO {

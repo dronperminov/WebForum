@@ -1,7 +1,8 @@
 package service;
 
-import java.util.List;
 import model.MessagesEntity;
+
+import java.util.List;
 
 public interface MessagesManager {
     void insertMessage(MessagesEntity message);

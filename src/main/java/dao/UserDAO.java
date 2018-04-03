@@ -1,7 +1,8 @@
 package dao;
 
-import java.util.List;
 import model.UserEntity;
+
+import java.util.List;
 
 public interface UserDAO {
     void insertUser(UserEntity user);

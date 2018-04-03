@@ -1,7 +1,7 @@
 package dao;
 
-import java.util.List;
 import model.MessagesEntity;
+import java.util.List;
 
 public interface MessagesDAO {
     void insertMessage(MessagesEntity message);

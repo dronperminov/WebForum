@@ -1,12 +1,11 @@
 package service;
 
-import java.util.List;
-
 import dao.MessagesDAO;
 import model.MessagesEntity;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 public class MessagesManagerImpl implements MessagesManager {
     @Autowired
