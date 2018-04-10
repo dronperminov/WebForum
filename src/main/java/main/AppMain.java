@@ -21,12 +21,13 @@ public class AppMain {
         UserEntity user = new UserEntity();
         user.setName("Andrew");
         user.setSurname("Perminov");
-        user.setLogin("dronperminov");
+        user.setLogin("login4");
         user.setIsModerator((byte) 1);
-        user.setPassword("gfdmbvq");
+        user.setPassword("password3");
         user.setRegistrationDate(new java.sql.Timestamp(System.currentTimeMillis()));
 
         userManager.insertUser(user);
+        System.out.println("Size of users: " + userManager.getUsers().size());
 
         System.out.println("User inserted");
     }
