@@ -1,12 +1,14 @@
 use webforum;
 
+use webforum;
+
 drop table messages;
 drop table topic;
 drop table user;
 drop table sections;
 
 CREATE TABLE IF NOT EXISTS `webforum`.`user` (
-  `userId` INT(11) NOT NULL,
+  `userId` INT(11) NOT NULL auto_increment,
   `surname` VARCHAR(45) NULL DEFAULT NULL,
   `name` VARCHAR(45) NOT NULL,
   `patronymic` VARCHAR(45) NULL DEFAULT NULL,
@@ -22,14 +24,14 @@ ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
 CREATE TABLE IF NOT EXISTS `webforum`.`sections` (
-  `sectionId` INT(11) NOT NULL,
+  `sectionId` INT(11) NOT NULL auto_increment,
   `sectionName` VARCHAR(300) NOT NULL,
   PRIMARY KEY (`sectionId`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
 CREATE TABLE IF NOT EXISTS `webforum`.`topic` (
-  `topicId` INT(11) NOT NULL,
+  `topicId` INT(11) NOT NULL auto_increment,
   `sectionId` INT(11) NULL DEFAULT NULL,
   `name` VARCHAR(500) NULL DEFAULT NULL,
   `description` VARCHAR(3000) NULL DEFAULT NULL,
@@ -44,7 +46,7 @@ ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
 CREATE TABLE IF NOT EXISTS `webforum`.`messages` (
-  `messageId` INT(11) NOT NULL,
+  `messageId` INT(11) NOT NULL auto_increment,
   `authorId` INT(11) NOT NULL,
   `topicId` INT(11) NOT NULL,
   `content` VARCHAR(3000) NOT NULL,
