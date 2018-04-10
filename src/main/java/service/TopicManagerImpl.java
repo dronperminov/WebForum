@@ -34,6 +34,10 @@ public class TopicManagerImpl implements TopicManager {
         return topicDAO.getTopicById(topicId);
     }
 
+    //@override
+    @Transactional
+    public TopicEntity getTopicByName(String topicName) {return topicDAO.getTopicByName(topicName); }
+
     //@Override
     @Transactional
     public List<TopicEntity> getTopics() {

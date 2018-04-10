@@ -10,6 +10,7 @@ public interface TopicManager {
     void deleteTopic(TopicEntity topic);
 
     TopicEntity getTopicById(int topicId);
+    TopicEntity getTopicByName(String topicName);
 
     List<TopicEntity> getTopics();
 }

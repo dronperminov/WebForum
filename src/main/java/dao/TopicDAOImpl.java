@@ -2,6 +2,7 @@ package dao;
 
 import model.TopicEntity;
 import org.hibernate.Criteria;
+import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate4.support.HibernateDaoSupport;
@@ -34,6 +35,13 @@ public class TopicDAOImpl extends HibernateDaoSupport implements TopicDAO {
     //@Override
     public TopicEntity getTopicById(int topicId) {
         return (TopicEntity) sessionFactory.getCurrentSession().get(TopicEntity.class, topicId);
+    }
+
+    //@Override
+    public TopicEntity getTopicByName(String topicName) {
+        Query query = sessionFactory.getCurrentSession().createQuery("from TopicEntity where name = :name");
+        query.setParameter("name", topicName);
+        return (TopicEntity) query.list().get(0);
     }
 
     //@Override
