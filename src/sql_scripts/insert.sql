@@ -31,21 +31,21 @@ insert into topic values(6, 2, 'Cin and cout not found', 'Where cin and cout in 
 insert into topic values(7, 2, 'isream and ifstream', 'What am i doing?');
 insert into topic values(8, 2, 'Where is thread in windows?', 'Code not compile in Windows 10');
 
-insert into topic values(10, 3, 'Plotter', 'How can i create a plotter in C#?');
-insert into topic values(11, 3, '.Net components', 'I don''t see any component in form');
-insert into topic values(12, 3, 'Input', 'How to read integer value from console');
+insert into topic values(9, 3, 'Plotter', 'How can i create a plotter in C#?');
+insert into topic values(10, 3, '.Net components', 'I don''t see any component in form');
+insert into topic values(11, 3, 'Input', 'How to read integer value from console');
 
-insert into topic values(13, 4, 'Instruments for loking position of site', '');
-insert into topic values(14, 4, 'Yandex.Webmaster and Google Search Console', 'Hot add www and https versions of my site?');
-insert into topic values(15, 4, 'Headers in page. Need?', '');
-insert into topic values(16, 4, 'Meta tags description and keyword', 'I don''w want to use it. Google and Yandex go my site down?');
+insert into topic values(12, 4, 'Instruments for loking position of site', '');
+insert into topic values(13, 4, 'Yandex.Webmaster and Google Search Console', 'Hot add www and https versions of my site?');
+insert into topic values(14, 4, 'Headers in page. Need?', '');
+insert into topic values(15, 4, 'Meta tags description and keyword', 'I don''w want to use it. Google and Yandex go my site down?');
 
-insert into topic values(17, 5, 'ATmega8 ports', 'How switch on PD5 in AVR ATmega8');
-insert into topic values(18, 5, 'Could not program my controller on ISP with AVRdude', '');
-insert into topic values(19, 5, 'AVRdude error. STK500 not found', '');
+insert into topic values(16, 5, 'ATmega8 ports', 'How switch on PD5 in AVR ATmega8');
+insert into topic values(17, 5, 'Could not program my controller on ISP with AVRdude', '');
+insert into topic values(18, 5, 'AVRdude error. STK500 not found', '');
 
-insert into topic values(20, 6, 'Hello world', 'My first Arduino "hello world" is not working');
-insert into topic values(21, 6, 'Arduino as AVR ATmega328P.', 'How write program for arduino as C program for AVR 328p');
+insert into topic values(19, 6, 'Hello world', 'My first Arduino "hello world" is not working');
+insert into topic values(20, 6, 'Arduino as AVR ATmega328P.', 'How write program for arduino as C program for AVR 328p');
 
 /* Messages */
 insert into messages values(1, 1, 1, 'Hello, please, write more of you problem and I try to help you with this.', '2018-02-10', null);

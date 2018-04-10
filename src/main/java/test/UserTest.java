@@ -147,7 +147,7 @@ public class UserTest extends AbstractTestNGSpringContextTests {
     }
 
     @Test(dataProvider = "loginsToGet")
-    public void getAccountTest(String login, Boolean expected) {
+    public void getUserByLoginTest(String login, Boolean expected) {
         try {
             UserEntity user = userManager.getUser(login);
             assertNotNull(user);
@@ -160,7 +160,7 @@ public class UserTest extends AbstractTestNGSpringContextTests {
     }
 
     @Test(dataProvider = "idsToGet")
-    public void getAccountByIdTest(int id, Boolean expected) {
+    public void getUserByIdTest(int id, Boolean expected) {
         try {
             UserEntity user = userManager.getUserById(id);
             assertNotNull(user);
@@ -173,7 +173,7 @@ public class UserTest extends AbstractTestNGSpringContextTests {
     }
 
     @Test(dataProvider = "namesToGet")
-    public void getAccountByName(String firstName, String secondName, Boolean expected) {
+    public void getUsersByNameTest(String firstName, String secondName, Boolean expected) {
         try {
             List<UserEntity> users = userManager.getUsersByName(firstName, secondName);
             assertNotNull(users);
