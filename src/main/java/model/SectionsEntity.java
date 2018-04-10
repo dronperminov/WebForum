@@ -1,12 +1,14 @@
 package model;
 
 import javax.persistence.*;
+import java.util.Collection;
 
 @Entity
 @Table(name = "sections", schema = "webforum", catalog = "")
 public class SectionsEntity {
     private int sectionId;
     private String sectionName;
+    private Collection<TopicEntity> topicsBySectionId;
 
     @Id
     @Column(name = "sectionId", nullable = false)
@@ -46,5 +48,14 @@ public class SectionsEntity {
         int result = sectionId;
         result = 31 * result + (sectionName != null ? sectionName.hashCode() : 0);
         return result;
+    }
+
+    @OneToMany(mappedBy = "sectionsBySectionId")
+    public Collection<TopicEntity> getTopicsBySectionId() {
+        return topicsBySectionId;
+    }
+
+    public void setTopicsBySectionId(Collection<TopicEntity> topicsBySectionId) {
+        this.topicsBySectionId = topicsBySectionId;
     }
 }

@@ -2,6 +2,7 @@ package model;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.Collection;
 
 @Entity
 @Table(name = "user", schema = "webforum", catalog = "")
@@ -16,6 +17,7 @@ public class UserEntity {
     private String login;
     private String password;
     private byte isModerator;
+    private Collection<MessagesEntity> messagesByUserId;
 
     @Id
     @Column(name = "userId", nullable = false)
@@ -152,5 +154,14 @@ public class UserEntity {
         result = 31 * result + (password != null ? password.hashCode() : 0);
         result = 31 * result + (int) isModerator;
         return result;
+    }
+
+    @OneToMany(mappedBy = "userByAuthorId")
+    public Collection<MessagesEntity> getMessagesByUserId() {
+        return messagesByUserId;
+    }
+
+    public void setMessagesByUserId(Collection<MessagesEntity> messagesByUserId) {
+        this.messagesByUserId = messagesByUserId;
     }
 }

@@ -1,6 +1,7 @@
 package model;
 
 import javax.persistence.*;
+import java.util.Collection;
 
 @Entity
 @Table(name = "topic", schema = "webforum", catalog = "")
@@ -8,6 +9,7 @@ public class TopicEntity {
     private int topicId;
     private String name;
     private String description;
+    private Collection<MessagesEntity> messagesByTopicId;
     private SectionsEntity sectionsBySectionId;
 
     @Id
@@ -60,6 +62,15 @@ public class TopicEntity {
         result = 31 * result + (name != null ? name.hashCode() : 0);
         result = 31 * result + (description != null ? description.hashCode() : 0);
         return result;
+    }
+
+    @OneToMany(mappedBy = "topicByTopicId")
+    public Collection<MessagesEntity> getMessagesByTopicId() {
+        return messagesByTopicId;
+    }
+
+    public void setMessagesByTopicId(Collection<MessagesEntity> messagesByTopicId) {
+        this.messagesByTopicId = messagesByTopicId;
     }
 
     @ManyToOne

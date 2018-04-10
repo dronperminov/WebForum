@@ -4,12 +4,14 @@ import javax.persistence.*;
 import java.sql.Timestamp;
 
 @Entity
-@Table(name = "messages", schema = "webforum", catalog = "")
+@Table(name = "messages", schema = "webforum")
 public class MessagesEntity {
     private int messageId;
     private String content;
     private Timestamp sendDate;
     private String filesUrl;
+    private UserEntity userByAuthorId;
+    private TopicEntity topicByTopicId;
 
     @Id
     @Column(name = "messageId", nullable = false)
@@ -73,5 +75,25 @@ public class MessagesEntity {
         result = 31 * result + (sendDate != null ? sendDate.hashCode() : 0);
         result = 31 * result + (filesUrl != null ? filesUrl.hashCode() : 0);
         return result;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "authorId", referencedColumnName = "userId", nullable = false)
+    public UserEntity getUserByAuthorId() {
+        return userByAuthorId;
+    }
+
+    public void setUserByAuthorId(UserEntity userByAuthorId) {
+        this.userByAuthorId = userByAuthorId;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "topicId", referencedColumnName = "topicId", nullable = false)
+    public TopicEntity getTopicByTopicId() {
+        return topicByTopicId;
+    }
+
+    public void setTopicByTopicId(TopicEntity topicByTopicId) {
+        this.topicByTopicId = topicByTopicId;
     }
 }
