@@ -23,11 +23,11 @@ public class UserTest extends AbstractTestNGSpringContextTests {
     @DataProvider
     public Object[][] usersToInsert() {
         UserEntity regularUser = new UserEntity();
-        regularUser.setLogin("testUser");
-        regularUser.setName("Username");
-        regularUser.setSurname("UserSurname");
-        regularUser.setIsModerator((byte) 1);
-        regularUser.setPassword("userPassword");
+        regularUser.setLogin("insertedUserLogin");
+        regularUser.setName("name");
+        regularUser.setSurname("surname");
+        regularUser.setIsModerator((byte) 0);
+        regularUser.setPassword("password");
         regularUser.setRegistrationDate(new java.sql.Timestamp(System.currentTimeMillis()));
 
         UserEntity nullUser = null;
@@ -40,7 +40,7 @@ public class UserTest extends AbstractTestNGSpringContextTests {
 
     @DataProvider
     public Object[][] usersToDelete() {
-        UserEntity regularUser = userManager.getUser("testUser");
+        UserEntity regularUser = userManager.getUser("insertedUserLogin");
         //UserEntity constraintedUser = userManager.getUser("usedUser");
         UserEntity nullUser = null;
 
@@ -53,7 +53,7 @@ public class UserTest extends AbstractTestNGSpringContextTests {
 
     @DataProvider
     public Object[][] usersToUpdate() {
-        UserEntity regular = userManager.getUserById(2);
+        UserEntity regular = userManager.getUserById(1);
 
         return new Object[][]{
                 {regular, true},
@@ -84,13 +84,15 @@ public class UserTest extends AbstractTestNGSpringContextTests {
         };
     }
 
+    /************************************** TESTS *********************************************/
+
     @Test
     public void getUsersTest() {
         int amount = userManager.getUsers().size();
         assertNotNull(amount);
     }
 
-    @Test(dataProvider = "usersToInsert")
+    @Test(dataProvider = "usersToInsert", priority = 1)
     public void insertUserTest(UserEntity newUser, Boolean expected) {
         try {
             int amount = userManager.getUsers().size();
@@ -105,7 +107,7 @@ public class UserTest extends AbstractTestNGSpringContextTests {
         }
     }
 
-    @Test(dataProvider = "usersToDelete")
+    @Test(dataProvider = "usersToDelete", priority = 2)
     public void deleteUserTest(UserEntity removed, Boolean expected) {
         try {
             int amount = userManager.getUsers().size();

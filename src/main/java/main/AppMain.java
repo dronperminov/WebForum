@@ -21,7 +21,7 @@ public class AppMain {
         UserEntity user = new UserEntity();
         user.setName("Andrew");
         user.setSurname("Perminov");
-        user.setLogin("login4");
+        user.setLogin("login3");
         user.setIsModerator((byte) 1);
         user.setPassword("password3");
         user.setRegistrationDate(new java.sql.Timestamp(System.currentTimeMillis()));
